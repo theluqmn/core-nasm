@@ -4,8 +4,8 @@ An assembly library containing basic subroutines for console applications writte
 
 ## Available subroutines
 
-- `print`: Prints a string stored in the stack to the console.
-- `input`: Reads a string from the console and stores it in the stack.
+- `print`: Prints a string stored in the `rsi` to the console.
+- `input`: Reads a string from the console and stores it in `rsi`.
 
 ## Installation
 

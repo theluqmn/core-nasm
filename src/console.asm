@@ -36,7 +36,6 @@ input:
     syscall
 
     ; store the input in rsi
-    mov rdi, [console_input_buffer]
-    push rdi
+    mov rsi, console_input_buffer
 
     ret

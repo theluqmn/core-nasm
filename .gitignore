@@ -1,4 +1,4 @@
-test.asm
-*.bash
-*.o
 test
+test.asm
+/build
+*.bash

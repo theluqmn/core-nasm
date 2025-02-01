@@ -4,8 +4,16 @@ An assembly library containing basic subroutines for console applications writte
 
 ## Available subroutines
 
+Below are the available subroutines that are available in Core-NASM:
+
+### Console
+
 - `print`: Prints a string stored in the `rsi` to the console.
 - `input`: Reads a string from the console and stores it in `rsi`.
+
+### String manipulation
+
+- `strlen`: Calculates the length of a string stored in `rsi`.
 
 ## Installation
 

@@ -24,7 +24,6 @@ print:
     pop rsi
     mov rdx, rdx
     syscall
-
     ret
 
 input:
@@ -37,5 +36,4 @@ input:
 
     ; store the input in rsi
     mov rsi, console_input_buffer
-
     ret

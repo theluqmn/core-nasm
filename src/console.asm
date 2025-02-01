@@ -2,11 +2,13 @@ section .bss
     console_input_buffer: resb 256
 
 section .text
-    global _console_print
+    global print
+    global input
     
-_console_print:
+print:
     ; initialise registers
-    push rsi
+    pop rsi ; get message from stack for use in loop
+    push rsi ; push back to stack
     mov rdx, 0
 
     ; loop through each character in the message
@@ -24,7 +26,7 @@ _console_print:
     syscall
     ret
 
-_console_input:
+input:
     ; initialise registers
     mov rax, 0
     mov rdi, 0
@@ -33,5 +35,6 @@ _console_input:
     syscall
 
     ; store the input in rsi
-    mov rsi, [console_input_buffer]
+    mov rdi, [console_input_buffer]
+    push rdi
     ret

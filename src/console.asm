@@ -1,11 +1,11 @@
 section .bss
-    input: resb 128
+    console_input_buffer: resb 256
 
 section .text
     global _console_print
     
 _console_print:
-    ; save message
+    ; initialise registers
     push rsi
     mov rdx, 0
 
@@ -22,4 +22,16 @@ _console_print:
     mov rdi, 1
     pop rsi
     syscall
+    ret
+
+_console_input:
+    ; initialise registers
+    mov rax, 0
+    mov rdi, 0
+    mov rsi, console_input_buffer
+    mov rdx, 256
+    syscall
+
+    ; store the input in rsi
+    mov rsi, [console_input_buffer]
     ret

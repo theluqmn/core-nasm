@@ -7,8 +7,7 @@ section .text
     
 print:
     ; initialise registers
-    pop rsi ; get message from stack for use in loop
-    push rsi ; push back to stack
+    push rsi
     mov rdx, 0
 
     ; loop through each character in the message
@@ -23,7 +22,9 @@ print:
     mov rax, 1
     mov rdi, 1
     pop rsi
+    mov rdx, rdx
     syscall
+
     ret
 
 input:
@@ -37,4 +38,5 @@ input:
     ; store the input in rsi
     mov rdi, [console_input_buffer]
     push rdi
+
     ret
